@@ -1,4 +1,4 @@
-package org.sample.actor
+package org.sample.akka.actor
 
 import akka.actor.ActorSystem
 import akka.actor.Props
