@@ -16,7 +16,18 @@ class MockTargetTest extends WordSpec with MockFactory {
       
       assert(10 == mockTarget(1, 2))
       assert(20 == mockTarget(2, 4))
+    }
+    
+    "be tested as Stub function" in {
+      val mockTarget = stubFunction[Int, Int, Int]
+      (mockTarget).when(1, 2).returning(10)
+      (mockTarget).when(2, 4).returning(20)
       
+      assert(10 == mockTarget(1, 2))
+      assert(20 == mockTarget(2, 4))
+      
+      mockTarget.verify(1, 2).once()
+      mockTarget.verify(2, 4).once()
     }
     
     "be tested as Mock object" in {
