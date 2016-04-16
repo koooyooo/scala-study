@@ -1,6 +1,6 @@
 package org.sample.scalatest.mock
 
-class MockTarget {
+class Target {
   
   val concat = (a: String, b: String) => a + b
   
